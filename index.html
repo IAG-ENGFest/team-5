@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plane Dodger - Boarding Pass Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>✈️ Plane Dodger</h1>
+            <div class="game-stats">
+                <div class="stat">Score: <span id="score">0</span></div>
+                <div class="stat">Lives: <span id="lives">3</span></div>
+                <div class="stat">Level: <span id="level">1</span></div>
+                <div class="stat">Time: <span id="time">0s</span></div>
+            </div>
+        </div>
+
+        <div class="game-wrapper">
+            <!-- Legend Panel -->
+            <div class="legend-panel">
+                <h4>Legend</h4>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="legend-icon">🕹️</span>
+                        <span class="legend-label">You</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon">✈️</span>
+                        <span class="legend-label">Planes (Dodge!)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon">🎫</span>
+                        <span class="legend-label">Boarding Pass (+100)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon">⛽</span>
+                        <span class="legend-label">Fuel (+1 Life)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon">⚡</span>
+                        <span class="legend-label">Speed Boost (2x)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon">👻</span>
+                        <span class="legend-label">Ghost Mode</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon">🐌</span>
+                        <span class="legend-label">Slow-Mo</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon">📦</span>
+                        <span class="legend-label">Size Up</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon">🚀</span>
+                        <span class="legend-label">Turbo Planes</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-icon">🔫</span>
+                        <span class="legend-label">Gun (Shoot)</span>
+                    </div>
+                </div>
+            </div>
+
+            <canvas id="gameCanvas"></canvas>
+
+        <!-- Menu Screen -->
+        <div id="menuScreen" class="screen active">
+            <div class="screen-content">
+                <h2>Plane Dodger</h2>
+                <p class="subtitle">Boarding Pass Edition</p>
+                <div class="instructions">
+                    <h3>How to Play</h3>
+                    <p>🕹️ Use <strong>LEFT/RIGHT ARROW KEYS</strong> or <strong>A/D</strong> to move</p>
+                    <p>📱 Or tap <strong>LEFT/RIGHT</strong> sides of screen on mobile</p>
+                    <p>🎯 Dodge the planes and collect items!</p>
+                    <hr>
+                    <h4>Collectibles:</h4>
+                    <ul>
+                        <li>🎫 <strong>Boarding Pass</strong> - +100 points</li>
+                        <li>⛽ <strong>Fuel Can</strong> - +1 life</li>
+                        <li>⚡ <strong>Speed Boost</strong> - Move 2x faster (5s)</li>
+                        <li>👻 <strong>Ghost Mode</strong> - Pass through planes (5s)</li>
+                        <li>🐌 <strong>Slow-Mo</strong> - Planes move slower (5s)</li>
+                        <li>📦 <strong>Size Up</strong> - Bigger character (5s)</li>
+                        <li>🚀 <strong>Turbo Planes</strong> - Planes faster (5s)</li>
+                        <li>🔫 <strong>Gun</strong> - Destroy all planes on screen (5s)</li>
+                    </ul>
+                </div>
+                <button id="startBtn" class="btn-start">START GAME</button>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="screen">
+            <div class="screen-content">
+                <h2>GAME OVER</h2>
+                <div class="final-score">
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <p>Level Reached: <span id="finalLevel">1</span></p>
+                </div>
+                <button id="restartBtn" class="btn-start">PLAY AGAIN</button>
+            </div>
+        </div>
+
+        <!-- Power-ups Display -->
+        <div id="powerUpDisplay" class="powerup-display"></div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
